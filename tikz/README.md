@@ -17,4 +17,4 @@ Add `--from latex+raw_tex --lua-filter=tikz.lua` to command to run;
 
 It might be necessary to use `latexpand` when using `\include` in your .tex file:
 
-latexpand filename.tex | pandoc --from latex+raw_tex --lua-filter=tikz.lua -o filename.docx
+`latexpand filename.tex | pandoc --from latex+raw_tex --lua-filter=tikz.lua -o filename.docx`
