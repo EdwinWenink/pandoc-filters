@@ -1,6 +1,6 @@
 # Description
 
-*tikz.lua* operates as a lua filter to render TikZ images in .tex files with pandoc
+*tikz.lua* operates as a lua filter to render TikZ figures in .tex files ready for conversion to other file formats with pandoc.
 
 # Requirements
 
