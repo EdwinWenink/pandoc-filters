@@ -18,3 +18,11 @@ Add `--from latex+raw_tex --lua-filter=tikz.lua` to command to run;
 It might be necessary to use `latexpand` when using `\include` in your .tex file:
 
 `latexpand filename.tex | pandoc --from latex+raw_tex --lua-filter=tikz.lua -o filename.docx`
+
+# Sources
+
+## Filter
+
+- Original version: [Pandoc Documentation](https://pandoc.org/lua-filters.html)
+- Updated version: [StackExchange](https://tex.stackexchange.com/questions/567594/how-to-use-pandoc-to-convert-tex-file-containing-a-tikz-figure-to-a-docx-fil)
+
