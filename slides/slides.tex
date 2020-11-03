@@ -411,11 +411,8 @@ $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin customization here
 
-% Huidige problemen
-%
-% - Lege pagina na TOC
-% - Hoe spelen markdown and "sections" goed samen met outertheme
-% - AtBeginSection (zie hierboven)
+% See \AtBeginSection above; commented out so we do not have new pages for a section
+% TODO; setting voor aparte slide; ja of nee.
 
 %% Theming
 %\usetheme{Antibes}
@@ -436,20 +433,12 @@ $endif$
 %% Font colors
 \setbeamercolor{title}{fg=Foreground}
 \setbeamercolor{subtitle}{fg=Foreground}
+\setbeamercolor{date}{fg=Foreground}
 \setbeamercolor{frametitle}{fg=Foreground}
 \setbeamercolor{section in toc}{fg=Foreground}
 \setbeamercolor{structure}{fg=Foreground}
 \setbeamercolor{head}{fg=Foreground}
 \setbeamercolor{normal text}{fg=Foreground, bg=Background}
-
-%% Select font
-%\usefonttheme{professionalfonts}
-%\usefonttheme{structuresmallcapsserif}
-%\usefonttheme{serif}
-%\usepackage{mathptmx}
-%\usepackage{charter}
-%\usepackage{euler}
-\usepackage{palatino}
 
 %% Set font size and font family
 \setbeamerfont{frametitle}{size=\fontsize{12pt}{14pt},series=\mdseries}

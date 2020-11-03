@@ -6,5 +6,5 @@ if [ "$#" -eq "0" ]
         echo "Compiling slides ..."
         file=$(basename "$1$")
         filename=${file%.*}
-        pandoc -s -t beamer --slide-level=2 --template=slides.tex "$@" -o "$filename".pdf
+        pandoc -s -t beamer --pdf-engine=xelatex --slide-level=2 --template=slides.tex "$@" -o "$filename".pdf
 fi
