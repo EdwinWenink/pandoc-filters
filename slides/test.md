@@ -6,23 +6,19 @@ institute: Radboud University
 dark: true
 titlegraphic: heidi.png
 date: 2020
----
-
-<!--
 toc: true
 toc-title: Contents
--->
+---
 
-\section{Introduction}
+# Introduction
 
-# Header 1
+## TODO
 
-- Content
-    * Content
-- Content
-- Content
+- Lettertype
+- Lege pagina na titelpagina
+- Secties met boven bar
 
-# Ok
+## Ok
 
 \begin{alertblock}{Important stuff!}
 Very important indeed
@@ -32,12 +28,13 @@ Very important indeed
 For example this.
 \end{examples}
 
-
 1. What
 2. The
 3. Fuck
 
-# Jep
+# Main body
+
+## Bo-rush
 
 Hmm, \alert{ja hoor} daar gaan we weer!
 
