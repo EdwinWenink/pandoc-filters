@@ -9,6 +9,7 @@ date: 2020
 toc: true
 toc-title: Contents
 mainfont: COUR.TTF
+section-page: true
 ---
 
 # Introduction
@@ -44,3 +45,9 @@ Hmm, \alert{ja hoor} daar gaan we weer!
 - Content
 
 A.k.a. Boris is \alert{de mannnn}.
+
+### Subsub
+
+- Test
+- Test
+- Test

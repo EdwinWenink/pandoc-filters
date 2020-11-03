@@ -79,18 +79,22 @@ $if(section-titles)$
     \usebeamerfont{subsection title}\insertsubsection\par
   \end{beamercolorbox}
 }
-%\AtBeginPart{
-  %\frame{\partpage}
-%}
-%\AtBeginSection{
-  %\ifbibliography
-  %\else
-    %\frame{\sectionpage}
-  %\fi
-%}
-%\AtBeginSubsection{
-  %\frame{\subsectionpage}
-%}
+
+$if(section-page)$
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+$endif$
+
 $endif$
 $endif$
 $if(beamerarticle)$
