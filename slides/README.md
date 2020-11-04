@@ -21,3 +21,9 @@ YAML flags:
 Note that fonts are specific to your system.
 
 For convenience, see `slidec.sh` and `demo.md`.
+
+Backlog:
+
+- Adjust resolution of slides
+- Flags to include header navigation bar (e.g. top-nav) and footer information
+- Deal with custom options for styling images in slides (e.g. fullscreen; image on right hand side)
