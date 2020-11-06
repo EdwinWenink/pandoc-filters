@@ -8,7 +8,7 @@ titlegraphic: heidi.png
 date: 2020
 toc: true
 toc-title: Contents
-mainfont: COUR.TTF
+mainfont: "FreeMono"
 section-page: true
 ---
 

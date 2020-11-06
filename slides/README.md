@@ -1,6 +1,6 @@
 # Producing Beamer slides using Markdown
 
-`pandoc -s -t beamer --slide-level=2 --template=slides.tex test.md -o test.pdf`
+`pandoc -s -t beamer --pdf-engine=xelatex --slide-level=2 --             template=slides.tex filename.md -o filename.pdf`
 
 If you want to use the top-navigation, make sure you use `--slide-level=2`. 
 Then '#' will indicate section headers, and '##' will be slide headers.
