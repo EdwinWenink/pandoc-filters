@@ -445,7 +445,12 @@ $endif$
 \setbeamercolor{normal text}{fg=Foreground, bg=Background}
 
 %% Set font size and font family
-\setbeamerfont{frametitle}{size=\fontsize{12pt}{14pt},series=\mdseries}
+$if(titlefont)$
+\usepackage{fontspec}
+\setbeamerfont{frametitle}{family=\fontspec{$titlefont$}, size=\fontsize{12pt}{14pt},series=\mdseries}
+$else$
+\setbeamerfont{frametitle}{size=\fontsize{12pt}{14pt}, series=\mdseries}
+$endif$
 \setbeamerfont{section in toc}{size=\small,series=\bfseries}
 \setbeamerfont{subsection in toc}{size=\footnotesize}
 \setbeamerfont{structure}{family=\rmfamily,series=\mdseries}
@@ -513,12 +518,6 @@ $endif$
 \setbeamertemplate{itemize subitem}{\small \color{Foreground}x}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-
-
-
-
 
 \begin{document}
 $if(has-frontmatter)$
