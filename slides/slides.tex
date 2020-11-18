@@ -460,6 +460,7 @@ $endif$
 \setbeamerfont{title}{size=\fontsize{18pt}{18pt}}
 \setbeamerfont{subtitle}{size=\fontsize{12pt}{12pt}}
 \setbeamerfont{author}{size=\fontsize{10pt}{10pt}}
+\setbeamerfont{id}{size=\fontsize{10pt}{10pt}}
 \setbeamerfont{institute}{size=\fontsize{10pt}{10pt}}
 \setbeamerfont{date}{size=\fontsize{10pt}{10pt}}
 
@@ -480,14 +481,24 @@ $endif$
         {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
       \fi%     
     \end{beamercolorbox}%
-    \vskip1em\par
-    \begin{beamercolorbox}[sep=2pt,center]{author}
+    \vskip-0.5em\par
+
+    $if(lecture-id)$
+    % Dirty hack; we fill in something else in the author's place 
+    \begin{beamercolorbox}[sep=1pt,center]{author}
+        \usebeamerfont{id}$lecture-id$
+    \end{beamercolorbox}
+    $else$
+    \begin{beamercolorbox}[sep=1pt,center]{author}
       \usebeamerfont{author}\insertauthor
     \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=2pt,center]{institute}
+
+    \begin{beamercolorbox}[sep=1pt,center]{institute}
       \usebeamerfont{institute}\insertinstitute
     \end{beamercolorbox}
-    \begin{beamercolorbox}[sep=2pt,center]{date}
+    $endif$
+
+    \begin{beamercolorbox}[sep=1pt,center]{date}
       \usebeamerfont{date}\insertdate
     \end{beamercolorbox}\vskip0.5em
   \endgroup

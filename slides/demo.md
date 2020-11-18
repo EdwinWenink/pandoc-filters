@@ -8,6 +8,7 @@ titlegraphic: heidi.png
 date: November 2020
 toc: true
 toc-title: Contents
+lecture-id: "Lecture 1"
 mainfont: COUR.TTF
 titlefont: COPRGTL.TTF
 section-page: true

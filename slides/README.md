@@ -17,6 +17,7 @@ YAML flags:
 - `mainfont`: select system font 
 - `titlefont`: separate font for slide titles (assumes xelatex due to fontspec)
     * If unspecified, `mainfont` will be used.
+- `lecture-id`: if specified, use alternate title page format for lecture series
 
 Note that fonts are specific to your system.
 
