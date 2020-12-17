@@ -20,9 +20,9 @@ section-page: true
 
 Some things we still need to do:
 
-- Resolutie van slides
 - Flags to include header navigation bar (e.g. top-nav) and footer information
-- Deal with custom options for styling images in slides
+- Be smart
+- Be good
 
 ## Emphasis
 

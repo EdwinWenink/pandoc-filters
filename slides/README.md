@@ -21,10 +21,9 @@ Custom YAML flags:
 - `dark` : toggle dark theme
 - `titlegraphic`: image to display on the first slide
 - `section-page`: separate slide for section titles
-- `mainfont`: select system font 
-    * Note that fonts are specific to your system.
 - `titlefont`: separate font for slide titles (assumes xelatex due to fontspec)
     * If unspecified, `mainfont` will be used.
+    * Note that fonts are specific to your system.
 - `lecture-id`: if specified, use alternate title page format for lecture series, displaying the lecture id
 
 The template is based on the default pandoc template which already contains an abundance of options.
