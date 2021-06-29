@@ -28,6 +28,7 @@ But make sure to disable the top navigation in that case.
 - `no-caption-numbering`: disable the more formal caption numbering, like in "Figure 1";
 - `no-caption-label`: show figure and table captions, but without the caption label, e.g. without "Figure: "
     * overrides other caption settings
+- `quotebar`: show a bar left to quotes within quote environments 
 
 The template is based on the default pandoc template which already contains an abundance of options.
 For example, you can change the aspect ratio via YAML as well
