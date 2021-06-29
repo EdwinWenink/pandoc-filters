@@ -40,9 +40,6 @@ $if(background-image)$
 }
 $endif$
 \usepackage{pgfpages}
-\setbeamertemplate{caption}[numbered]
-\setbeamertemplate{caption label separator}{: }
-\setbeamercolor{caption name}{fg=normal text.fg}
 \beamertemplatenavigationsymbols$if(navigation)$$navigation$$else$empty$endif$
 $for(beameroption)$
 \setbeameroption{$beameroption$}
@@ -455,6 +452,8 @@ $endif$
 \setbeamerfont{subsection in toc}{size=\footnotesize}
 \setbeamerfont{structure}{family=\rmfamily,series=\mdseries}
 \setbeamerfont{normal text}{size=\small}
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamerfont{footnote mark}{size=\tiny}
 
 %% Title page font
 \setbeamerfont{title}{size=\fontsize{18pt}{18pt}}
@@ -464,7 +463,8 @@ $endif$
 \setbeamerfont{institute}{size=\fontsize{10pt}{10pt}}
 \setbeamerfont{date}{size=\fontsize{10pt}{10pt}}
 
-% Define custom title page
+
+%% Define custom title page
 \makeatletter
 \setbeamertemplate{title page}{
   \vbox{}
@@ -512,8 +512,16 @@ $endif$
 	%\setbeamertemplate{section in toc}[circle] [ball unnumbered] [square]
 \setbeamertemplate{subsection in toc}[ball unnumbered]
 
-%% Show figure/table caption number
-\setbeamertemplate{caption}[numbered]
+%% Settings for figure/table captions
+\setbeamertemplate{caption}[numbered]  % Captions with numbering
+$if(no-caption-numbering)$
+\setbeamertemplate{caption}[default] % Captions without numbering
+$endif$
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+$if(no-caption-label)$
+\setbeamertemplate{caption}{\raggedright\insertcaption\par}  % Custom format; no caption label
+$endif$
 
 %% Set footline page number
 \setbeamertemplate{navigation symbols}{

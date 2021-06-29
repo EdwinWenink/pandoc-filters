@@ -5,7 +5,7 @@ It uses all the magic `pandoc` provides by default, with some additional custom 
 
 To produce slides, run:
 
-`pandoc -s -t beamer --pdf-engine=xelatex --slide-level=2 --             template=slides.tex filename.md -o filename.pdf`
+`pandoc -s -t beamer --pdf-engine=xelatex --slide-level=2 --template=slides.tex filename.md -o filename.pdf`
 
 For convenience, see `slidec.sh` so you don't have to type this command manually.
 
@@ -16,7 +16,7 @@ But make sure to disable the top navigation in that case.
 
 *Opinionated*: uses xelatex for font-support.
 
-Custom YAML flags:
+## Custom YAML flags:
 
 - `dark` : toggle dark theme
 - `titlegraphic`: image to display on the first slide
@@ -25,6 +25,9 @@ Custom YAML flags:
     * If unspecified, `mainfont` will be used.
     * Note that fonts are specific to your system.
 - `lecture-id`: if specified, use alternate title page format for lecture series, displaying the lecture id
+- `no-caption-numbering`: disable the more formal caption numbering, like in "Figure 1";
+- `no-caption-label`: show figure and table captions, but without the caption label, e.g. without "Figure: "
+    * overrides other caption settings
 
 The template is based on the default pandoc template which already contains an abundance of options.
 For example, you can change the aspect ratio via YAML as well
@@ -37,6 +40,28 @@ You can see a simple example here: [`demo.md`](./demo.md).
 Also note that `pandoc` is very flexible.
 For example, if you need to customize an image (e.g. it's position or size), you can still include default LaTeX perfectly fine.
 
-Backlog:
+## Images
 
-- Flags to include header navigation bar (e.g. top-nav) and footer information
+For images, you can use default markdown syntax. 
+If your image is large, it will probably overflow.
+If you require more control, you can better use the LaTeX figure environment, e.g.:
+
+```
+\begin{figure}[t]
+    \includegraphics[height=0.7\textheight]{fig.png}
+    \centering
+\end{figure}
+```
+
+
+## Backlog:
+
+- Flags to include header navigation bar (e.g. top-nav) and footer information (currently enabled by default)
+- Find a workaround that prevents top-level headers to not fall of the top navigation bar
+- Maybe allow images on section pages if `section-page` is enabled [inspiration](https://tex.stackexchange.com/questions/404224/beamer-metropolis-theme-add-image-to-section-page)
+    * Without `section-page` this already works by just inserting the image in the top-level section (i.e. `#`)
+- Flag for letting items appear one by one
+    * Check: `beamerdefaultoverlayspecification{<+->}`
+- Regular markdown italics with `*cursive*` does not seem to work.
+    * `\emph` also doesn't work, so apparently this styling is broken right now
+- Add styling for blockquotes, i.e. using `>` in markdown. 
