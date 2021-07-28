@@ -1,9 +1,6 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
-% TODO regelafstand groter
-% TODO justify fixen
-
 \documentclass[$fontsize$, a4paper]{article}
 \usepackage{fontspec}
 
@@ -52,6 +49,11 @@ $endif$
 
 % When justifying text, maintain same style without paragraph indentations 
 \setlength{\JustifyingParindent}{0pt}
+
+% Line spacing
+$if(linespacing)$
+\renewcommand{\baselinestretch}{$linespacing$}
+$endif$
 
 % Custom ampersand
 \newcommand{\amper}{{\fontspec[Scale=.95]{$mainfont$}\selectfont\itshape\&}}

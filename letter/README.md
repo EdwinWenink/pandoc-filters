@@ -49,6 +49,7 @@ Although I didn't test it, you can probably use this on Windows, too. Both [Pand
 My fork adds these settings:
 
 - **`justify`**: When set to `true`, justify the text (but maintains the style without paragraph indentation)  
+- **`linespacing`**: set e.g. to `1.2` to increase the spacing between consecutive lines within a paragraph
 
 ## Custom letterhead
 
