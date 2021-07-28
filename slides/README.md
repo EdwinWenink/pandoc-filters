@@ -66,3 +66,4 @@ If you require more control, you can better use the LaTeX figure environment, e.
 - Regular markdown italics with `*cursive*` does not seem to work.
     * `\emph` also doesn't work, so apparently this styling is broken right now
 - Add styling for blockquotes, i.e. using `>` in markdown. 
+- When giving a custom toc title, it appears as such with a number "Content I". I'd prefer it without the number.
