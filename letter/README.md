@@ -44,6 +44,12 @@ Although I didn't test it, you can probably use this on Windows, too. Both [Pand
 - **`letterhead`**: include custom letterhead in the PDF (see below).
 - **`customdate`**: Allows you to specify a custom date in the format YYYY-MM-DD in case you need to pre/postdate your letter. *Caveat*: Requires `datetime2` along with its language module (ex: if `lang` is set to `german` do `tlmgr install datetime2 datetime2-german`)
 
+## Fork
+
+My fork adds these settings:
+
+- **`justify`**: When set to `true`, justify the text (but maintains the style without paragraph indentation)  
+
 ## Custom letterhead
 
 If you have already designed your own letterhead and want to use it with this template, including it should be easy enough. Set the `letterhead` option to `true` to activate the `wallpaper` package in the template. `wallpaper` will look for a file named `letterhead.pdf` in the project root folder and print it on the PDF before compiling the document. Change the fonts to match the ones in your letterhead, adjust the margins with `geometry` and you should be all set.

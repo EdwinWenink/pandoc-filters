@@ -1,6 +1,9 @@
 %!TEX TS-program = xelatex
 %!TEX encoding = UTF-8 Unicode
 
+% TODO regelafstand groter
+% TODO justify fixen
+
 \documentclass[$fontsize$, a4paper]{article}
 \usepackage{fontspec}
 
@@ -12,7 +15,7 @@
 % No page numbers
 \pagenumbering{gobble}
 
-% Left align
+% Left align (default LaTeX behavior is justified text)
 \usepackage[document]{ragged2e}
 
 % Trim excessive whitespace before lists
@@ -46,6 +49,9 @@ $endif$
 
 % Set paragraph break
 \setlength{\parskip}{1em}
+
+% When justifying text, maintain same style without paragraph indentations 
+\setlength{\JustifyingParindent}{0pt}
 
 % Custom ampersand
 \newcommand{\amper}{{\fontspec[Scale=.95]{$mainfont$}\selectfont\itshape\&}}
@@ -124,6 +130,12 @@ $if(subject)$
 $endif$
 
 \vspace{1em}
+
+$if(justify)$
+% Resets to default LaTeX text-alignment
+% N.B. gets overwritten again by FlushRight below
+\justifying
+$endif$
 
 $body$
 
