@@ -62,6 +62,12 @@ $else$
 \definecolor{Foreground}{RGB}{0, 0, 0}
 $endif$
 
+% Define colors
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+
 % TODO introduce if statement
 \usepackage[leftbars, color]{changebar}
 %\cbcolor{red} % TODO I didn't get color to work yet i.c.w. leftbars
@@ -278,14 +284,48 @@ $if(listings)$
 \lstset{defaultdialect=[5.3]Lua}
 \lstset{defaultdialect=[x86masm]Assembler}
 \lstset{basicstyle=\scriptsize}
-$if(code-language)$
+$if(code-language)$  % set basic language
 \lstset{language=$code-language$}
-$else$
-\lstset{language=Python}  % Python as default code language
 $endif$
+
+% Custom highlighting style for Python
+\lstdefinestyle{myPython}{
+    language=Python,
+    basicstyle=\tiny\ttfamily,
+    backgroundcolor=\color{Background},
+    keywordstyle=\ttfamily\color{deepblue},
+    morekeywords={self, as, with, yield, True, False, None}, % Add keywords here
+    emph={MyClass,__init__},          % Custom highlighting
+    emphstyle=\ttfamily\color{deepred},    % Custom highlighting style
+    stringstyle=\color{deepgreen},
+    commentstyle=\color{mygray},
+    breaklines=true,
+    breakindent=3ex,
+    breakatwhitespace=true,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    frame=single,
+    rulecolor=\color{black},
+    tabsize=4,
+    captionpos=b,
+    upquote=true,
+}
+
+% Default code style is Python
+\lstnewenvironment{code}[1][]
+    {\lstset{style=myPython,#1}}
+    {}
+
+% Python. Options will be passed to lstset
+$if(python)$
+\lstnewenvironment{code}[1][]
+    {\lstset{style=myPython,#1}}
+    {}
 $endif$
-$if(lhs)$
-\lstnewenvironment{code}{\lstset{language=Haskell,basicstyle=\small\ttfamily}}{}
+
+% TODO other languages should go here.
+
 $endif$
 $if(highlighting-macros)$
 $highlighting-macros$
