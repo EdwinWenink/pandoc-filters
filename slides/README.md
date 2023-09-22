@@ -9,7 +9,7 @@ To produce slides, run:
 
 For convenience, see `slidec.sh` so you don't have to type this command manually.
 
-If you want to use the top-navigation, make sure you use `--slide-level=2`. 
+If you want to use the top-navigation, make sure you use `--slide-level=2`.
 Then '#' will indicate section headers, and '##' will be slide headers.
 If you do not care about sections you can use the default setting, which is `--slide-level=1`.
 But make sure to disable the top navigation in that case.
@@ -28,12 +28,13 @@ But make sure to disable the top navigation in that case.
 - `no-caption-numbering`: disable the more formal caption numbering, like in "Figure 1";
 - `no-caption-label`: show figure and table captions, but without the caption label, e.g. without "Figure: "
     * overrides other caption settings
-- `quotebar`: show a bar left to quotes within quote environments 
+- `quotebar`: show a bar left to quotes within quote environments
+- `code-language`: which language to pass to the `lstlisting` environment when `listings: true` is passed in the YAML header.
 
 The template is based on the default pandoc template which already contains an abundance of options.
 For example, you can change the aspect ratio via YAML as well
 
-- `aspectratio` 
+- `aspectratio`
     * valid options: 169, 1610, 149, 54, 32
 
 You can see a simple example here: [`demo.md`](./demo.md).
@@ -43,7 +44,7 @@ For example, if you need to customize an image (e.g. it's position or size), you
 
 ## Images
 
-For images, you can use default markdown syntax. 
+For images, you can use default markdown syntax.
 If your image is large, it will probably overflow.
 If you require more control, you can better use the LaTeX figure environment, e.g.:
 
@@ -65,5 +66,5 @@ If you require more control, you can better use the LaTeX figure environment, e.
     * Check: `beamerdefaultoverlayspecification{<+->}`
 - Regular markdown italics with `*cursive*` does not seem to work.
     * `\emph` also doesn't work, so apparently this styling is broken right now
-- Add styling for blockquotes, i.e. using `>` in markdown. 
+- Add styling for blockquotes, i.e. using `>` in markdown.
 - When giving a custom toc title, it appears as such with a number "Content I". I'd prefer it without the number.
