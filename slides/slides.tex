@@ -51,6 +51,17 @@ $endfor$
 \usepackage{pagecolor}
 \usepackage{xcolor}
 
+
+% Custom switch for dark theme
+$if(dark)$
+\usecolortheme{albatross}
+\definecolor{Background}{RGB}{0, 0, 0}
+\definecolor{Foreground}{RGB}{255, 255, 255}
+$else$
+\definecolor{Background}{RGB}{255, 255, 255}
+\definecolor{Foreground}{RGB}{0, 0, 0}
+$endif$
+
 % TODO introduce if statement
 \usepackage[leftbars, color]{changebar}
 %\cbcolor{red} % TODO I didn't get color to work yet i.c.w. leftbars
@@ -435,16 +446,6 @@ $endif$
 
 %% Theming
 %\usetheme{Antibes}
-
-% Custom switch for dark theme
-$if(dark)$
-\usecolortheme{albatross}
-\definecolor{Background}{RGB}{0, 0, 0}
-\definecolor{Foreground}{RGB}{255, 255, 255}
-$else$
-\definecolor{Background}{RGB}{255, 255, 255}
-\definecolor{Foreground}{RGB}{0, 0, 0}
-$endif$
 
 % Outer theme
 \useoutertheme[subsection=false, footline=authorinstitute]{miniframes}
