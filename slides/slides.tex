@@ -475,9 +475,6 @@ $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin customization here
 
-% See \AtBeginSection above; commented out so we do not have new pages for a section
-% TODO; setting voor aparte slide; ja of nee.
-
 %% Theming
 %\usetheme{Antibes}
 
@@ -522,7 +519,6 @@ $endif$
 \setbeamertemplate{title page}{
   \vbox{}
   \vfill
-
   \begingroup
     \centering
     {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
@@ -576,11 +572,12 @@ $if(no-caption-label)$
 \setbeamertemplate{caption}{\raggedright\insertcaption\par}  % Custom format; no caption label
 $endif$
 
-%% Set footline page number
+%% Have a clean navigation bar with only the page numbers
+% Let numbers align to the right edge of miniframe footline
 \setbeamertemplate{navigation symbols}{
 	\usebeamerfont{footline}
 	\insertframenumber/\inserttotalframenumber
-    % TODO right margin is missing
+    \hspace{2cm}
 } %if empty:get rid of navigation symbols
 
 
