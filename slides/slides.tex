@@ -311,11 +311,6 @@ $endif$
     upquote=true,
 }
 
-% Default code style is Python
-\lstnewenvironment{code}[1][]
-    {\lstset{style=myPython,#1}}
-    {}
-
 % Python. Options will be passed to lstset
 $if(python)$
 \lstnewenvironment{code}[1][]
@@ -323,7 +318,8 @@ $if(python)$
     {}
 $endif$
 
-% TODO other languages should go here.
+% TODO other languages should go here and define the `code` environment
+% How do I unset this environment so I can have a default styling and redefine it?
 
 $if(highlighting-macros)$
 $highlighting-macros$
