@@ -68,21 +68,6 @@ $endif$
 \definecolor{deepgreen}{rgb}{0,0.5,0}
 \definecolor{mygray}{rgb}{0.5,0.5,0.5}
 
-% TODO introduce if statement
-\usepackage[leftbars, color]{changebar}
-%\cbcolor{red} % TODO I didn't get color to work yet i.c.w. leftbars
-\setlength\changebarwidth{3pt}
-
-% TODO BROKEN!
-$if(quotebar)$
-\renewenvironment{quote}
-               {\list{}{\rightmargin\leftmargin}%
-                \cbstart
-                \item\relax}
-                \cbend
-               {\endlist}
-$endif$
-
 % Prevent slide breaks in the middle of a paragraph
 \widowpenalties 1 10000
 \raggedbottom
@@ -577,14 +562,15 @@ $endif$
 \setbeamertemplate{navigation symbols}{
 	\usebeamerfont{footline}
 	\insertframenumber/\inserttotalframenumber
-    \hspace{2cm}
+    \hspace{-.5pt}
 } %if empty:get rid of navigation symbols
 
 
 %% Change itemize bullets shape
 %\setbeamertemplate{itemize item}[ball]{\tiny \color{black}}
-\setbeamertemplate{itemize item}{\tiny \color{Foreground}>}
-\setbeamertemplate{itemize subitem}{\small \color{Foreground}x}
+\usepackage{pifont}
+\setbeamertemplate{itemize item}{\color{red}>}
+\setbeamertemplate{itemize subitem}{\color{Foreground}\ding{56}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
