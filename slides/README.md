@@ -22,8 +22,7 @@ But make sure to disable the top navigation in that case.
 - `titlegraphic`: image to display on the first slide
 - `section-page`: separate slide for section titles
 - `titlefont`: separate font for slide titles (assumes xelatex due to fontspec)
-    * If unspecified, `mainfont` will be used.
-    * Note that fonts are specific to your system.
+    * If unspecified, `mainfont` will be used. Note that fonts are specific to your system.
 - `lecture-id`: if specified, use alternate title page format for lecture series, displaying the lecture id
 - `no-caption-numbering`: disable the more formal caption numbering, like in "Figure 1";
 - `no-caption-label`: show figure and table captions, but without the caption label, e.g. without "Figure: "
@@ -45,6 +44,18 @@ You can see a simple example here: [`demo.md`](./demo.md).
 
 Also note that `pandoc` is very flexible.
 For example, if you need to customize an image (e.g. it's position or size), you can still include default LaTeX perfectly fine.
+
+Note on using fonts:
+In principle you should use the named version of the font.
+When directly specifying the TTF filename, I found that italic and bold stop working.
+However, I find it quite intransparent which fonts are available, because I cannot specify all available fonts on my system with the named version.
+In the following example, I can only get Bahnschrift working by specifying the full filename, but the regular font name is required for bold and italic to work.
+TODO investigate further!
+
+```yaml
+titlefont: BAHNSCHRIFT.TTF
+mainfont: "Calibri Light"  # instead of CALIBRIL.TTF
+```
 
 ## Custom environments
 
@@ -146,5 +157,4 @@ If you require more control, you can always fall back to using the LaTeX figure 
     * `\emph` also doesn't work, so apparently this styling is broken right now
 - Add styling for blockquotes, i.e. using `>` in markdown.
 - When giving a custom toc title, it appears as such with a number "Content I". I'd prefer it without the number.
-- The page numbering is too far too the right
 - More space in header and footer
