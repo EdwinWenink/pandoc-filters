@@ -460,6 +460,9 @@ $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin customization here
 
+% TODO pandoc inserts tightlist command; I want a bit more space before and after list.
+% Use enumitem?
+
 %% Theming
 %\usetheme{Antibes}
 
@@ -479,9 +482,9 @@ $endif$
 %% Set font size and font family
 $if(titlefont)$
 \usepackage{fontspec}
-\setbeamerfont{frametitle}{family=\fontspec{$titlefont$}, size=\fontsize{12pt}{14pt},series=\mdseries}
+\setbeamerfont{frametitle}{family=\fontspec{$titlefont$}, size=\Large, series=\mdseries}
 $else$
-\setbeamerfont{frametitle}{size=\fontsize{12pt}{14pt}, series=\mdseries}
+\setbeamerfont{frametitle}{size=\Large, series=\mdseries}
 $endif$
 \setbeamerfont{section in toc}{size=\small,series=\bfseries}
 \setbeamerfont{subsection in toc}{size=\footnotesize}
@@ -494,10 +497,9 @@ $endif$
 \setbeamerfont{title}{size=\fontsize{18pt}{18pt}}
 \setbeamerfont{subtitle}{size=\fontsize{12pt}{12pt}}
 \setbeamerfont{author}{size=\fontsize{10pt}{10pt}}
-\setbeamerfont{id}{size=\fontsize{10pt}{10pt}}
-\setbeamerfont{institute}{size=\fontsize{10pt}{10pt}}
-\setbeamerfont{date}{size=\fontsize{10pt}{10pt}}
-
+\setbeamerfont{id}{size=\fontsize{8pt}{8pt}}
+\setbeamerfont{institute}{size=\fontsize{8pt}{8pt}}
+\setbeamerfont{date}{size=\fontsize{8pt}{8pt}}
 
 %% Define custom title page
 \makeatletter
@@ -534,7 +536,7 @@ $endif$
 
     \begin{beamercolorbox}[sep=1pt,center]{date}
       \usebeamerfont{date}\insertdate
-    \end{beamercolorbox}\vskip0.5em
+    \end{beamercolorbox}
   \endgroup
   \vfill
 }
