@@ -460,8 +460,12 @@ $endif$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Begin customization here
 
-% TODO pandoc inserts tightlist command; I want a bit more space before and after list.
-% Use enumitem?
+% Pandoc inserts the tightlist environment to remove space between items
+% But I want a bit of space before and after the complete list itself
+\BeforeBeginEnvironment{itemize}{\vskip1ex}
+\AfterEndEnvironment{itemize}{\vskip1ex}
+\BeforeBeginEnvironment{enumerate}{\vskip1ex}
+\AfterEndEnvironment{enumerate}{\vskip1ex}
 
 %% Theming
 %\usetheme{Antibes}
@@ -566,7 +570,6 @@ $endif$
 	\insertframenumber/\inserttotalframenumber
     \hspace{-.5pt}
 } %if empty:get rid of navigation symbols
-
 
 %% Change itemize bullets shape
 %\setbeamertemplate{itemize item}[ball]{\tiny \color{black}}
